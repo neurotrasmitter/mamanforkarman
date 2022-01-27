@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="home" >
+    <task-input />
+    <div style="display: flex">
+      <NavBar />
+      <TaskList :storage="'homeStorage'"/>
+    </div>
+
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import TaskInput from '../components/taskInput';
+import TaskList from "../components/TaskList";
+import NavBar from "../components/NavBar";
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld,
+    NavBar,
+    TaskList,
+    TaskInput,
   },
 };
 </script>
